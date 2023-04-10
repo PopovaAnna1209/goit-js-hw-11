@@ -1,5 +1,5 @@
 import Notiflix from 'notiflix';
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
+// import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import './sass/common.scss';
 import './css/styles.css';
 import './sass/gallery.scss';

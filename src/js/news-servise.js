@@ -1,9 +1,7 @@
 import axios from 'axios';
 
-
 const BASE_URL = 'https://pixabay.com/api';
 const API_KEY = '25261319-41493d7d09d351884ef55fa82';
-
 
 export default class NewsApiService {
     constructor() {
@@ -26,27 +24,6 @@ async makesRequest () {
         this.incrementPage();
         return await axios.get(url);
     }; 
-
-    
-//     featchArticles(page) {
-//        console.log(this);
-//     try {
-//        const url = await axios.get(
-//         `${BASE_URL}/?key=${API_KEY}&q=${this.searchQuery}&image_type=photo&orientation=horizontal&safesearch=true&page=${this.pageAmount}&per_page=${this.perPage}',);
-//        const images = await response.data;
-//        return images;
-//         } catch (error) {
-//       console.log(error);
-//    }
-    
-//    return fetch(
-//     `${BASE_URL}/?key=${API_KEY}&q=${this.searchQuery}&image_type=photo&orientation=horizontal&safesearch=true&per_page=40&page=${pageAmount}`,
-//     )
-//     .then(response => response.json())
-//     .then(console.log);
-//   };
-
-
 
     incrementPage() {
         this.page += 1;           //Добавление сл.страницы/увеличение

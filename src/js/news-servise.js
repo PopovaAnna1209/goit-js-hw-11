@@ -41,3 +41,23 @@ async makesRequest () {
         this.searchQueary = newQuery;
     }
 }
+
+//     featchArticles(page) {
+//        console.log(this);
+//     try {
+//        const url = await axios.get(
+//         `${BASE_URL}/?key=${API_KEY}&q=${this.searchQuery}&image_type=photo&orientation=horizontal&safesearch=true&page=${this.pageAmount}&per_page=${this.perPage}',);
+//        const images = await response.data;
+//        return images;
+//         } catch (error) {
+//       console.log(error);
+//    }
+    
+//    return fetch(
+//     `${BASE_URL}/?key=${API_KEY}&q=${this.searchQuery}&image_type=photo&orientation=horizontal&safesearch=true&per_page=40&page=${pageAmount}`,
+//     )
+//     .then(response => response.json())
+//     .then(console.log);
+//   };
+
+

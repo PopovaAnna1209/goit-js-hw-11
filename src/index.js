@@ -22,13 +22,9 @@ const refs = {
   loadMoreBtn: document.querySelector('.load-more'),
 };
 
-
-
-
 refs.searchForm.addEventListener('submit', onSearch);
 loadMoreBtn.refs.button.addEventListener('click', onLoadMore);
 // refs.loadMoreBtn.classList.add('is-hidden');
-
 
 async function onSearch(e) {
   e.preventDefault();        //Чтоб не перезагружалась страничка при субмите формы
@@ -53,9 +49,7 @@ async function onSearch(e) {
       data: { hits, total, totalHits },
           } = response;
           clearList();
-          loadMoreBtn.enable();
-  
-          
+          loadMoreBtn.enable();      
 
   if (hits.length === 0) {
     Notiflix.Notify.failure('Sorry, there are no images matching your search query. Please try again.');
@@ -67,7 +61,6 @@ async function onSearch(e) {
 
   loadMoreBtn.show();
   // loadMoreBtn.disable();
-
 }
 
 } catch (error) {
@@ -76,9 +69,7 @@ console.log(error.message);
 
 loadMoreBtn.enable();
 }
-};
-
-      
+};    
 
 async function onLoadMore() {
 // e.preventDefault();
@@ -93,24 +84,15 @@ if (hits.length === 0) {
 } else createGalleryList(hits); 
 };
 
-
-
-
-
 async function createGalleryList(hits) {
 
 const markup = itemsTemplate(hits);
 
-
-
-refs.gallery.insertAdjacentHTML('beforeend', markup);                                                   //Вставляет результат вызова шаблона
+refs.gallery.insertAdjacentHTML('beforeend', markup);      //Вставляет результат вызова шаблона
 
 simpleLightbox();
-scroll();
-  
+scroll(); 
 };
-
-
 
 function clearList() {
   refs.gallery.innerHTML = '';              //Очищает контейнер при сл.запросе поиска
